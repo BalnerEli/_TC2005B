@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 1: Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información</title>
+</head>
+<body>
+    <h1>Eliuth Balderas Neri </h1> 
+    <h2>A01703315</h2>
+    <p>Soy Eli. Me encanta la música (mi cantante favorito es <a target="_blank" href="https://www.youtube.com/watch?v=lyGRH8BlfZA">Justin Bieber</a>) y bailar aunque no necesariamente esto implique que sea buena en ello. 
+    En cuanto al deporte me gusta mucho ir al gym puesto a que realmente es un momento para sacar todo el estrés.
+    Amo participar en proyectos sociales que me permitan ayudar a comunidades marginadas. <br>
+    <br>
+    Contacto: <br>
+    A01703315@tec.mx <br>
+    </p> 
+    <img src="me.jpeg" width="150"/>
+    <hr>
+    <h3>HTML = Hyper text markup Language</h3>
+    <P>lenguaje estandar para crear páginas web. Consiste de etiquetas como parrafos, cabecera, cuerpo, etc </P>
+    <hr>
+    <h2>PREGUNTAS</h2>
+    <P>
+        ¿Cuál es la diferencia entre Internet y la World Wide Web? <br>
+        De acuerdo con la BBC, el "Internet es una inmensa red de computadoras alrededor de todo el mundo conectadas entre sí.
+        En cambio, la web (la World Wide Web) es una enorme colección de páginas que se asienta sobreesa red de computadoras."<br>
+        <br>
+
+        -Internet es el medio <br>
+        -WWW está EN el Internet <br>
+        <br>
+        ¿Cuáles son las partes de un URL?<br>
+        <img src="URL.png" width="500"/> <br>
+        <br>
+        dominio es la dirección de la computadora a la que nos queremos comunicar <br>
+        ruteo: <br>
+        parámetro: el nombre del archivo<br>
+        puede tener más variables <br>
+        <br>
+        ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?<br>
+        GET: Solicita información del servidor. (esta petición solo tiene HEAD, no tiene BODY)<br>
+        HEAD: Similar a GET pero solo solicita encabezados, no el cuerpo del recurso.<br>
+        POST: Envía datos al servidor para ser procesados como formularios (este sí tiene BODY).<br>
+        PUT: Actualiza un recurso en el servidor.<br>
+        PATCH: Actualiza parcialmente un recurso en el servidor.<br>
+        DELETE: Elimina un recurso en el servidor.<br>
+        <br>
+        ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?<br>
+        POST ya que envía los datos al servidor para su procesamiento. (un get sería inseguro)<br>
+        <br>
+        ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?<br>
+        GET <br>
+        <br>
+        Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?<br>
+        Significa OK esto indica que la solicitud fue exitosa y el servidor pudo encontrar y devolver la página solicitada.<br>
+        <br>
+        ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?<br>
+        Error 404 (Not Found) <br>
+        No, es responsavilidad del cliente <br>
+        <br>
+        ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?<br>
+        Error 500 (Internal Server Error)<br>
+        Estos son cuestiones del sistema <br>
+        Sí, también es responsabilidad del desarrollador corregir este tipo de error, ya que generalmente indica un problema en el servidor.<br>
+        <br>
+        ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? 
+        Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.<br>
+        Significa que cierto atributo ya no se recomienda su uso debido a que puede ser reemplazado 
+        por estándares más nuevos o mejores prácticas. <br>
+        <br>
+        ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?<br>
+        HTML es la versión más reciente de HTML <br>
+        1.	Nuevas etiquetas semánticas: tales como header, footer, nav, article, section y aside facilitando la estructura y comprensión del código o contenido ya que describen la función y significado del contenido <br>
+        2.	Soporte para contenido multimedia: HTML5 incluye elementos como video y audio que permiten incorporar contenido multimedia directamente en las páginas web sin la necesidad de utilizar complementos externos como Flash como en otras versiones . Esto facilita la reproducción de contenido multimedia en múltiples dispositivos sin problemas de compatibilidad.
+        3.	Formularios más avanzados: nuevos tipos de entrada de formularios input type="date", input type="email", input type="url", input type="number", etc. Así como nuevos atributos para validar formularios, como required, pattern, min, y max. <br>
+        4.	Canvas : canvas permite a los desarrolladores dibujar gráficos y animaciones mediante programación usando JavaScript <br>
+        5.	Almacenamiento local: con localStorage y sessionStorage. Esto permite a las aplicaciones web guardar datos en el dispositivo del usuario y acceder a ellos sin necesidad de utilizar cookies. <br>
+        6.	APIs y funcionalidades adicionales: HTML5 incluye una serie de nuevas APIs (Application Programming Interfaces) que permiten a los desarrolladores acceder a diversas funcionalidades del dispositivo y el navegador, como Geolocalización, WebSockets, Drag and Drop, Web Workers, entre otras. <br>
+        7.	Compatibilidad con dispositivos móviles <br>
+        <br>
+        ¿Qué componentes de estructura y estilo tiene una tabla?<br>
+        table: Elemento que contiene la tabla. <br>
+        tr: Fila de la tabla.<br>
+        td: Celda de datos.<br>
+        th: Celda de encabezado.<br>
+        <br>
+        ¿Cuáles son los principales controles de una forma HTML5?<br>
+        input: (text, password, checkbox, radio, etc.)<br>
+        textarea: texto multilínea<br>
+        select: Lista desplegable<br>
+        button: Botón<br>
+        <br>
+        ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas) <br>
+        476/555 puntos - Google Chrome <br>
+        <br>
+        Sobre el ciclo de vida y desarrollo de los sistemas de información:<br>
+        ¿Cuál es el ciclo de vida de los sistemas de información?<br>
+        Es desde que surge la idea, hasta que se entrega, o según otro autores, hasta que se le da el mantenimiento.Inclye también hasta cundo se retira el software.
+        <br>
+        <img src="ciclodevida.png" width="300"/> <br>
+        <br>
+        ¿Cuál es el ciclo de desarrollo de sistemas de información?<br>
+        Análisis:Se establecen las bases del software, mediante la especificación de los requisitos <br>
+        Diseño: Se crea un modelo abstracto del sistema mediante el diseño de la arquitectura y estructura de este. Descripción del Diseño de Software) <br>
+        Desarrollo: Desarrollar y codificación del código fuente del sistema, se define la parametrización del sistema <br>
+        Pruebas: Verificar y validar el sistema <br>
+        Implantación: Instalación del software <br>
+        Mantenimiento: Se asegura que el sistema funciona adecuadamente con el cliente, se realizan mejoras y actualizaciones al sistema para hacerlo más eficiente y se corrigen errores. <br>
+    
+        NOTA: ciclo de ingeniería.(Análisis- response al qué. Diseño-cómo se hará)
+
+    </P>    
+
+    <h5>Referencias:</h5>
+    <p>
+        Aviani, G. (2019) An introduction to http: Everything you need to know, 
+        freeCodeCamp.org. Available at: https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/ (Accessed: 08 August 2023). 
+        <br>
+        BBC. (n.d.). ¿Cuál es la diferencia entre internet y la web? (Y por qué muchos Las confunden). 
+        BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,asienta%20sobreesa%20red%20de%20computadoras. 
+        <br>
+        KeepCoding. (s.f.). Ciclo de Vida del Desarrollo del Sistema. Recuperado
+        de https://keepcoding.io/blog/ciclo-de-vida-del-desarrollo-del-sistema/
+        <br>
+        Solbyte. (2001). 5 etapas del proceso de desarrollo de software. Recuperado 
+        de https://www.solbyte.com/blog/5-etapas-del-proceso-de-desarrollo-de-software/
+        <br>
+        Vera, M. (s.f.). Ingeniería de software.  Recuperado de
+        http://cidecame.uaeh.edu.mx/lcc/mapa/PROYECTO/libro17/124_implantacin_de_sistemas.html#:~:text=Es%20la%20ultima%20fase%20del,a%20cabo%20un%20proceso%20automatizado. 
+        <br>
+
+    </p>
+
+    <footer>Visual Studio Code https://code.visualstudio.com/</footer>
+</body>
+</html>
