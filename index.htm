@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio 1: Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información</title>
+    <title>Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información</title>
+    <style>
+        body {
+            color: gray;
+        }
+    </style>
+    <link rel="stylesheet" href="Lab2.css">
+
 </head>
 <body>
-    <h1>Eliuth Balderas Neri </h1> 
+    <h1 style="color:rgb(252, 192, 255)"> Eliuth Balderas Neri </h1> 
     <h2>A01703315</h2>
     <p>Soy Eli. Me encanta la música (mi cantante favorito es <a target="_blank" href="https://www.youtube.com/watch?v=lyGRH8BlfZA">Justin Bieber</a>) y bailar aunque no necesariamente esto implique que sea buena en ello. 
     En cuanto al deporte me gusta mucho ir al gym puesto a que realmente es un momento para sacar todo el estrés.
@@ -17,10 +24,10 @@
     </p> 
     <img src="me.jpeg" width="150"/>
     <hr>
-    <h3>HTML = Hyper text markup Language</h3>
-    <P>lenguaje estandar para crear páginas web. Consiste de etiquetas como parrafos, cabecera, cuerpo, etc </P>
+    <h3 id="HTML">HTML</h3>
+    <P> Hyper text markup Language, lenguaje estandar para crear páginas web. Consiste de etiquetas como parrafos, cabecera, cuerpo, etc </P>
     <hr>
-    <h2>PREGUNTAS</h2>
+    <h2>PREGUNTAS LAB 1</h2>
     <P>
         ¿Cuál es la diferencia entre Internet y la World Wide Web? <br>
         De acuerdo con la BBC, el "Internet es una inmensa red de computadoras alrededor de todo el mundo conectadas entre sí.
@@ -110,7 +117,46 @@
     
         NOTA: ciclo de ingeniería.(Análisis- response al qué. Diseño-cómo se hará)
 
-    </P>    
+    </P>   
+    
+    <hr>
+    <h2>PREGUNTAS LAB 2</h2>
+    <ol class="Lab2_preguntas">
+        <li>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de
+        !important en un CSS?   Esta palabra clave se usa para dar mayor 
+        prioridad a ciertas instrucciones para que instrucciones posteriores no
+        puedan sobreescribirlas. Sin embargo, esto puede llevar a problemas de 
+        mantenibilidad y dificultades para entender y/o modificar el código en 
+        el futuro. Así pues, el uso de esta plabra clave se utilizaría para elementos
+        que realmente se necesiten mantener en un cierto estilo.
+        </li>
+        <li>Si se pone una imagen de fondo en una página HTML, ¿por qué debe 
+        escogerse con cuidado? Porque tiene un impacto en cuanto a la apariencia de la
+        página, las imágenes también pueden afectar en cuanto a la legiibilidad de la página
+        que a su vez, impacta en  la experiencia que tiene en los usuarios. Por otro lado,
+        se debe de escoger cuidadosamente para manterner el formato de la página, y la visibilidad
+        que tiene en distintos dispositivos. Finalmente, el peso de las imágenes permite tener mejor o peor velocidad
+        en la carga
+        </li>
+        <li>Como ingeniero de software, ¿cuál es tu recomendación al elegir 
+        las unidades de un propiedad de estilo entre %, px y pt?
+        Se debe de tener en cuenta la naturaleza de la propiedad que se busca ajustar
+        así como las necesidades de diseño específicas del sitio web o aplicación.
+        Algunas de las recomendaciones son: si se buscan diseños flexibles y adaptables
+        a distintos estilos de pantalla lo mejor es utilizar %. si el diseño no requiere 
+        ser tan flexible y es fijo, lo mejor sería utilizar pixeles. Finalmente, no se recomienda usuar
+        puntos en el diseño web, ya que estos son ideales para impresiones y su tamaño está vinculado a la resolución del dispositivo.
+
+        </li>
+        <li>¿Por qué el uso de una versión minimizada del CSS mejora el 
+        rendimiento del sitio? Porque reduce la carga del archivo debido a la reducción del archivo, 
+        adicionalamente,  hay un menor uso en el ancho de banda y permite que el caché sea 
+        más efectivo.
+        </li>
+    </ol>
+    
+    
+    <hr>
 
     <h5>Referencias:</h5>
     <p>
@@ -119,6 +165,8 @@
         <br>
         BBC. (n.d.). ¿Cuál es la diferencia entre internet y la web? (Y por qué muchos Las confunden). 
         BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,asienta%20sobreesa%20red%20de%20computadoras. 
+        <br>
+        Integra Sistemas. (Fecha de publicación). Uso de !important en CSS. [Entrada de blog]. Recuperado de https://www.integrasistemas.es/blog/general/uso-de-important-en-css/
         <br>
         KeepCoding. (s.f.). Ciclo de Vida del Desarrollo del Sistema. Recuperado
         de https://keepcoding.io/blog/ciclo-de-vida-del-desarrollo-del-sistema/
@@ -129,6 +177,12 @@
         Vera, M. (s.f.). Ingeniería de software.  Recuperado de
         http://cidecame.uaeh.edu.mx/lcc/mapa/PROYECTO/libro17/124_implantacin_de_sistemas.html#:~:text=Es%20la%20ultima%20fase%20del,a%20cabo%20un%20proceso%20automatizado. 
         <br>
+
+    </p>
+
+    <footer>Visual Studio Code https://code.visualstudio.com/</footer>
+</body>
+</html>
 
     </p>
 
