@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <style>
         body {
             color: gray;
@@ -12,16 +14,86 @@
     <link rel="stylesheet" href="Lab2.css">
 
 </head>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://bulma.io">
+                    <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+                </a>
+            
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+    </header>
 <body>
+
+    <article class="panel is-primary">
+        <p class="panel-heading">
+        Panel
+        </p>
+        <p class="panel-tabs">
+        <a class="is-active">All</a>
+        <a>Public</a>
+        <a>Private</a>
+        <a>Sources</a>
+        </p>
+        <div class="panel-block">
+        <p class="control has-icons-left">
+            <input class="input is-primary" type="text" placeholder="Search">
+            <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+        </p>
+        </div>
+        <a class="panel-block is-active">
+        <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        Sobre mi
+        </a>
+        <a class="panel-block">
+        <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        Lab 1
+        </a>
+        <a class="panel-block">
+        <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        Lab 2
+        </a>
+        <a class="panel-block">
+        <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        Lab 3
+        </a>
+    </article>
+
+    
     <h1 style="color:rgb(252, 192, 255)"> Eliuth Balderas Neri </h1> 
     <h2>A01703315</h2>
-    <p>Soy Eli. Me encanta la música (mi cantante favorito es <a target="_blank" href="https://www.youtube.com/watch?v=lyGRH8BlfZA">Justin Bieber</a>) y bailar aunque no necesariamente esto implique que sea buena en ello. 
-    En cuanto al deporte me gusta mucho ir al gym puesto a que realmente es un momento para sacar todo el estrés.
-    Amo participar en proyectos sociales que me permitan ayudar a comunidades marginadas. <br>
     <br>
     Contacto: <br>
     A01703315@tec.mx <br>
     </p> 
+    <article class="message">
+        <div class="message-header">
+        <p>Aprendiendo a usar BULMA</p>
+        <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+        Hola. esta es una prueba usando un mensaje en BUlMA. oy Eli. Me encanta la música (mi cantante favorito es <a target="_blank" href="https://www.youtube.com/watch?v=lyGRH8BlfZA">Justin Bieber</a>) y bailar aunque no necesariamente esto implique que sea buena en ello. 
+        En cuanto al deporte me gusta mucho ir al gym puesto a que realmente es un momento para sacar todo el estrés.
+        Amo participar en proyectos sociales que me permitan ayudar a comunidades marginadas. <br>
+        
+        </div>
+    </article>
     <img src="me.jpeg" width="150"/>
     <hr>
     <h3 id="HTML">HTML</h3>
@@ -154,9 +226,39 @@
         más efectivo.
         </li>
     </ol>
-    
-    
     <hr>
+
+    <div class="card">
+    <div class="card-image">
+        <figure class="image is-4by3">
+        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="media">
+        <div class="media-left">
+            <figure class="image is-48x48">
+            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+            </figure>
+        </div>
+        <div class="media-content">
+            <p class="title is-4">Lab 5</p>
+            <p class="subtitle is-6">Describe Material design</p>
+        </div>
+        </div>
+    
+        <div class="content">
+            Material Design es un sistema de diseño visual desarrollado por Google, 
+            este se utiliza para crear interfaces de usuario, tienen que serÑ coherentes, atractivas y 
+            funcionales en aplicaciones y sitios web. Se ha convertido en un estándar de diseño ampliamente 
+            adoptado en la comunidad de diseño y desarrollo. Lo mejor de este sistema
+            es que tiene un enfoque en la materialidad, usa sombras y movimiento para
+            poder crear una experiencia más realista al usuario <a>@EliBalner</a>.
+        <a href="#">#css</a> <a href="#">#MaterialDesign</a>
+        <br>
+        </div>
+    </div>
+    </div>
 
     <h5>Referencias:</h5>
     <p>
@@ -179,12 +281,30 @@
         <br>
 
     </p>
-
-    <footer>Visual Studio Code https://code.visualstudio.com/</footer>
+    <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+        <a class="pagination-previous">Previous</a>
+        <a class="pagination-next">Next</a>
+        <ul class="pagination-list">
+        <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a class="pagination-link" aria-label="Goto page 45">2</a></li>
+        <li><a class="pagination-link is-current" aria-label="Page 2" aria-current="page">4</a></li>
+        
+    </ul>
+    </nav>
 </body>
 </html>
 
     </p>
+    <footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+        <strong>Bulma</strong> by <a href="https://jgthms.com">Eliuth Balderas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">Tecnológico de Monterrey</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+    </div>
+    </footer>
 
     <footer>Visual Studio Code https://code.visualstudio.com/</footer>
 </body>
