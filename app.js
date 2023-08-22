@@ -22,6 +22,8 @@ const http = require ("http");
 
 const server = http.createServer ((request, response) => {
     console.log(request.url);
+
+    if (request.url == "/"){
     response.setHeader('Content-Type','text/html');
     response.write(`
     <!DOCTYPE html>
@@ -338,6 +340,11 @@ const server = http.createServer ((request, response) => {
     
     `);
     response.end();
+
+}else{
+    response.statusCode = 404;
+    response.write()
+}
 });
 
 server.listen(3000);
