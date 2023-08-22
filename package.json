@@ -1,0 +1,15 @@
+{
+  "name": "tc2005b",
+  "version": "1.0.0",
+  "description": "lab 11 tc2005b",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "tc2005b"
+  ],
+  "author": "Eliuth Balderas",
+  "license": "MIT"
+}
