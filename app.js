@@ -1,22 +1,45 @@
+//Funcion string
 console.log("hola desde node");
 
 const filesystem = require('fs');
 filesystem.writeFileSync("hola.txt","Hola desde node")
 
-console.log("ya acabe de escribir");
 
-//funcion
+//LAB 8
+//promedio de arreglo
+function Promedio(arreglo) {
+    const suma = arreglo.reduce((total, num) => total + num, 0);
+    return suma / arreglo.length;
+}
+
+const arreglo = [10, 21, 18, 31, 83];
+const promedio = Promedio(arreglo);
+console.log(`El promedio es: ${promedio} `);
+
+//Problema random (usado en lab anterior)
+function inverso(numero) {
+    const numStr = numero.toString();
+    const numInverso = parseInt(numStr.split('').reverse().join(''));
+    return numInverso;
+}
+
+const numero = 738293;
+const numeroInverso = inverso(numero);
+console.log(`Número inverso: ${numeroInverso} `);
+
+//hecha en clase
 setTimeout( () => { 
     console.log("Mensaje en tiempo dado"); 
 }, 7000);
 
-const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
+const arr = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
 
-for (let item of arreglo) {
+for (let item of arr) {
 setTimeout(() => {
     console.log(item);
 }, item);
 }
+
 
 const http = require ("http");
 
