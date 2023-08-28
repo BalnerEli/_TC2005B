@@ -1,9 +1,3 @@
-const express = require('express');
-const app = express();
-
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({extended: false}));
 
 let platillos = [
     {
@@ -27,12 +21,8 @@ let platillos = [
 ];
 
 //------------------------------------- nosotros
-app.use((request, response, next) => {
-    console.log('Middleware ');
-    next(); 
-});
 
-app.get('/nosotros', (request, response, next) => {
+router.get('/nosotros', (request, response, next) => {
 
     const html=`
     <!DOCTYPE html>
@@ -77,12 +67,7 @@ app.get('/nosotros', (request, response, next) => {
     });
 
 //--------------------------------------------------------------- Ordenar
-app.use((request, response, next) => {
-    console.log('Middleware ');
-    next(); 
-});
-
-app.get('/ordenar', (request, response, next) => {
+router.get('/ordenar', (request, response, next) => {
 
     const html=`
     <!DOCTYPE html>
@@ -129,12 +114,8 @@ app.get('/ordenar', (request, response, next) => {
     });
 
 //--------------------------------------------------------------- OPINION
-app.use((request, response, next) => {
-    console.log('Middleware 1');
-    next(); 
-});
 
-app.get('/opinion', (request, response, next) => {
+router.get('/opinion', (request, response, next) => {
 
     const html=`
     <!DOCTYPE html>
@@ -199,10 +180,6 @@ app.get('/opinion', (request, response, next) => {
     });
 
 //-----------------------------------------------------NEW
-app.use((request, response, next) => {
-    console.log('Middleware ');
-    next(); 
-});
 
 app.get('/new', (request, response, next) => {
 
@@ -270,7 +247,7 @@ app.get('/new', (request, response, next) => {
     });
 
 //------------------------------------------- INICIO
-    app.get("/", (request, response, next) => {
+    router.get("/", (request, response, next) => {
 
         let html = `
         <!DOCTYPE html>
@@ -357,13 +334,5 @@ app.get('/new', (request, response, next) => {
 
         response.write(html);
     })
-    
-    app.use((request, response, next) => {
-        console.log('Middleware 3!');
-    
-        response.statusCode = 404;
-    
-        response.send('Not found'); 
-    });
 
-app.listen(3001);
+    module.exports = router;
