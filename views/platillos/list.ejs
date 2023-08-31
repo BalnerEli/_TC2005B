@@ -1,0 +1,48 @@
+<%- include('../includes/head.ejs') %>
+
+<h1 class="title">La comidita</h1>
+
+<div class="columns">
+    <% if (platillos.length > 0 ){ %>
+        <% for (let platillo of platillos) { %>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="< %= platillo.imagen %>" alt="<%= platillo.nombre %>">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="<%= platillo.imagen %>" alt="<%= platillo.nombre %> - <%= platillo.opinion %>">
+                            </figure>
+                            </div>
+                            <div class="media-content">
+                            <p class="title is-4"><%= platillo.nombre %></p>
+                            </div>
+                            </div>
+                            <div class="media-content">
+                            <p class="title is-4"><%= platillo.opinion %></p>
+                            </div>
+                        </div>
+                    
+                        <div class="content">
+                            <%= platillo.descripcion %>
+                            <br>
+                            <button class="button is-danger is-rounded" onclick=ver("<%= platillo.nombre %>")>Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+
+    <% } else { %>
+        <h2>No hay platillos</h2>
+    <% } %>
+    </div>
+</div>
+</section>
+
+<%- include('../includes/foot.ejs') %>
