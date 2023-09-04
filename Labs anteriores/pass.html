@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #f619d1;
+        }
+        div.a {
+            visibility: visible;
+            position: relative;
+            width: 480px;
+            height: 300px;
+            border: 10px solid rgb(183, 0, 255);
+            margin: 0 auto;
+            padding: 60px;
+        }
+
+        label {
+            font-weight: bold;
+            color: rgb(255, 0, 212);
+        }
+        
+        input[type="password"] {
+            width: 100%;
+            border: 1px solid rgb(217, 141, 247);
+            padding: 10px;
+            margin: 1px;
+        }
+        
+        input[type="confirm_password"] {
+            width: 100%;
+            border: 1px solid rgb(217, 141, 247);
+            padding: 10px;
+            margin: 1px;
+        }
+
+        #button {
+            background-color: #af4c82;
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            font-size: 15px; 
+            font-weight: bold; 
+            width: 105%;
+        }
+        
+        .valido {
+            color: green;
+        }
+        .invalido {
+            color: red;
+        }
+        
+        .help_text {
+            display: none;
+            color: #85b7f0;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <h2>Bienvenido al Validador de Contraseñas</h2>
+        <form>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" autofocus placeholder="Hola123$" onclick="Help('password_help')">
+            <div class="help_text" id="password_help">
+                Ingresa contraseña 
+                <br><br>
+                Nota:La contraseña debe tener al menos 6 caracteres, una letra mayúscula, un número y un carácter especial.
+            </div>
+
+            <label for="confirm_password">Verificar Contraseña:</label>
+            <input type="password" id="confirm_password" placeholder="Hola123$" onclick="Help('confirm_password_help')">
+            <div class="help_text" id="confirm_password_help">
+                Ingresa nuevamente la contraseña.
+            </div>
+            
+            <input type="button" value="Validar" onClick="validatedPassword()"  id="button">
+            <div id="message"></div>
+        </form>
+    </div>
+
+    <script>
+
+        function Help(mensaje) {
+            document.getElementById(mensaje).style.display = "block";
+        }
+
+        function validatedPassword() {
+            const passwordInput = document.getElementById("password");
+            const confirmPasswordInput = document.getElementById("confirm_password");
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (password == confirmPassword) {
+                mensaje.textContent = "Contraseña correcta";
+                mensaje.className = "valido";
+            } 
+            else {
+                mensaje.textContent = "Error, las contraseñas no coinciden";
+                mensaje.className = "invalido";
+            }
+
+            if (password.length < 6) {
+                mensaje.textContent = "La contraseña debe tener al menos 6 caracteres";
+                mensaje.className = "invalido";
+            }
+
+            if (/[A-Z]/.test(password) === false) {
+                mensaje.textContent = "La contraseña debe tener al menos una letra mayúscula";
+                mensaje.className = "invalido";
+            }
+
+            if (/\d/.test(password) === false) {
+                mensaje.textContent = "La contraseña debe tener al menos un número";
+                mensaje.className = "invalido";
+            }
+
+            if (/[!@#$%^&*]/.test(password) === false) {
+                mensaje.textContent = "La contraseña debe tener al menos un carácter especial";
+                mensaje.className = "invalido";
+            }
+
+            if (password.length >= 6 && /[A-Z]/.test(password) && /\d/.test(password) && /[!@#$%^&*]/.test(password) && password === confirmPassword) {
+                mensaje.textContent = "Contraseña correcta";
+                mensaje.className = "valido";
+            }
+        }
+    </script>
+</body>
+
+<hr>
+<ol>
+    <li>
+    ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos 
+    los inputs de las formas antes de enviar los datos al servidor? <br>
+    Porque proporciona una mejor experiencia de usuario  ya que la hace mucho 
+    más rápida, reduce la carga en el servidor, ayuda a 
+    prevenir errores de entrada y proporciona seguridad y protección contra ataques
+    comunes como la inyección de SQL.
+    </li>
+    <li>
+    ¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?
+    Esto se puede al deshabilitar JavaScript en el navegador,modificar el código fuente en el navegador,
+    enviar solicitudes al servidor.
+    </li>
+    <li>
+    Si te puedes saltar la seguridad de las validaciones de JavaScript, 
+    entonces ¿por qué la primera pregunta dice que es una buena práctica?
+    Por que a pesar de que sea una buena práctica, es necesario
+    comprender que la validación en el lado del cliente no proporciona 
+    una seguridad completa ya que esta puede ser saltada como se mencionaba con anterioridad
+    . Por ello, se tiene que hacer una validación adicional en el lado del 
+    servidor, esto para garantizar la integridad de datos y de esta manera, poder impedir ataques.
+    </li>
+</ol>
+<hr>
+<footer>
+    <h5>FUENTES</h5> 
+    https://www.w3schools.com/howto/howto_js_password_validation.asp <br>
+    https://ejuarez.bitbucket.io/tec21/lab6POE.html <br>
+</footer>
+</html>

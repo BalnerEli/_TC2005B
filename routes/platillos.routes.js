@@ -26,6 +26,7 @@ let platillos = [
 ];
 
 //------------------------------------- nosotros
+//necesario usar platillos/nosotros
 
 router.get('/nosotros', (request, response, next) => {
 
@@ -33,31 +34,33 @@ router.get('/nosotros', (request, response, next) => {
 });
 
 //--------------------------------------------------------------- Ordenar
+//necesario usar platillos/ordenar
 router.get('/ordenar', (request, response, next) => {
 
     response.sendFile(path.join(__dirname, '..', 'views', 'ordenar.html'));
 });
 
 //--------------------------------------------------------------- OPINION
-
+//necesario usar platillos/opinion
 router.get('/opinion', (request, response, next) => {
 
     response.sendFile(path.join(__dirname, '..', 'views', 'opinion.html'));
 });
 
 router.post('/opinion', (request, response, next) => {
-    
-        console.log(request.body);
-    
-        platillos.push({
-            nombre: request.body.nombre,
-            imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4DvQRndJwkYVEyZV5muqfh5RGWboDfsro7Q&usqp=CAU",
-            descripcion: request.body.descripcion,
-            opinion: request.body.opinion,
-        });
-    
-        response.redirect('/');
+
+    console.log(request.body);
+
+    platillos.push({
+        nombre: request.body.nombre,
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4DvQRndJwkYVEyZV5muqfh5RGWboDfsro7Q&usqp=CAU",
+        descripcion: request.body.descripcion,
+        opinion: request.body.opinion,
     });
+
+    response.redirect('/platillos');
+});
+
 
 //-----------------------------------------------------NEW
 
@@ -67,19 +70,18 @@ router.get('/new', (request, response, next) => {
 });
 
 router.post('/new', (request, response, next) => {
-    
-        console.log(request.body);
-    
-        platillos.push({
-            nombre: request.body.nombre,
-            imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4DvQRndJwkYVEyZV5muqfh5RGWboDfsro7Q&usqp=CAU",
-            descripcion: request.body.descripcion,
-            opinion: request.body.opinion,
-        });
-    
-        response.redirect('/');
+
+    console.log(request.body);
+
+    platillos.push({
+        nombre: request.body.nombre,
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4DvQRndJwkYVEyZV5muqfh5RGWboDfsro7Q&usqp=CAU",
+        descripcion: request.body.descripcion,
+        opinion: request.body.opinion,
     });
 
+    response.redirect('/platillos');
+});
 
 //------------------------------------------- INICIO
 router.get("/", (request, response, next) => {
@@ -87,6 +89,6 @@ router.get("/", (request, response, next) => {
     response.render('platillos/list.ejs', {
         platillos: platillos
     });
-})
+});
 
 module.exports = router;
