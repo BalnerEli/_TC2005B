@@ -1,0 +1,14 @@
+<%- include('../includes/head.ejs') %>
+
+<h1 class="title">Agregar Platillo</h1>
+<form action="/opinion" method="POST">
+    <label for="nombre">Platillo</label>
+    <input id="nombre" name="nombre" class="input" type="text" placeholder="Chilaquiles">
+    <br><br>
+    <label for="descripcion">Opinión del platillo</label>
+    <textarea id="descripcion" name="descripcion" class="textarea" placeholder="Me encanta..."></textarea>
+    <br>
+    <input id="agregar" name="agregar" type="submit" value="Agregar" class="button is-info">
+</form>
+
+<%- include('../includes/foot.ejs') %>
