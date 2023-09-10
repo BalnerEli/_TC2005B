@@ -1,0 +1,26 @@
+<%- include('../includes/head.ejs') %>
+
+<h1 class="title">Bienvenido</h1>
+<form action="/users/login" method="POST">
+    <label for="username">User:</label>
+    <input id="username" name="username" class="input is-primary" type="text" placeholder="EliBalner">
+    <br>
+    <label for="password">Password:</label>
+    <input id="password" name="password" class="input is-primary" type="password" placeholder="Hola123$">
+    <br>
+    <input class="button is-primary" type="submit" value="Entrar">
+
+    <div class="field-is-horizontal">
+    <div class="field">
+        <div class="control">
+        <label class="checkbox">
+            <input type="checkbox">
+            Recordarme
+        </label>
+        </div>
+    </div>
+    </div>
+    
+</form>
+
+<%- include('../includes/foot.ejs') %>
