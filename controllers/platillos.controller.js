@@ -39,9 +39,14 @@ exports.post_add = (request, response, next) => {
         descripcion: request.body.descripcion,
         opinion: request.body.opinion,
     });
-    platillo.save();
 
-    response.redirect('/platillos');
+    platillo.save()
+        .then(() => {
+            return response.redirect('/platillos');
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('/users/login');
+        });
 }
 
 exports.get_opinion = (request, response, next) => {
@@ -60,10 +65,14 @@ exports.post_opinion = (request, response, next) => {
         descripcion: request.body.descripcion,
         opinion: request.body.opinion,
     });
-    platillo.save();
-
-    response.redirect('/platillos');
-};
+    platillo.save()
+        .then(() => {
+            return response.redirect('/platillos');
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('/users/login');
+        });
+}
 
 exports.get_list = (request, response, next) => {
     const ultimo_acceso = new Date(request.get('Cookie').split('=')[1]);
@@ -71,10 +80,20 @@ exports.get_list = (request, response, next) => {
     const tiempo_transcurrido = (new Date().getTime() - ultimo_acceso.getTime()) / 1000;
     console.log(tiempo_transcurrido);
 
-    response.render('platillos/list.ejs', {
-        platillos: Platillo.fetchAll(),
-        tiempo_transcurrido: tiempo_transcurrido,
-        username: request.session.username || '',
-    });
+    Platillo.fetchAll()
+        .then(([rows, fieldData]) => {
+            console.log(rows);
+            console.log(fieldData);
+            return response.render('platillos/list.ejs', {
+                platillos: rows,
+                tiempo_transcurrido: tiempo_transcurrido,
+                username: request.session.username || '',
+            });
+            
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('/users/login');
+        }
+    );
 }
 

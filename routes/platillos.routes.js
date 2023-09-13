@@ -24,6 +24,8 @@ router.post('/add', platillosController.post_add);
 
 //list
 router.get('/list', platillosController.get_list);
+router.get('/list/:id', platillosController.get_list);
+router.get('/:id', platillosController.get_list);
 router.get('/', platillosController.get_list);
 
 module.exports = router;
