@@ -2,6 +2,7 @@
 
 <h1 class="title">Agregar Platillo</h1>
 <form action="/platillos/add" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <label for="nombre">Platillo a agregar</label>
     <input id="nombre" name="nombre" class="input" type="text" placeholder="Chilaquiles">
     <br><br>

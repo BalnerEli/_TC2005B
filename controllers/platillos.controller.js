@@ -4,6 +4,7 @@ const Platillo = require('../models/platillo.model');
 exports.get_about = (request, response, next) => {
     response.render('platillos/about.ejs',{
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     });
 };
 
@@ -12,6 +13,7 @@ exports.get_about = (request, response, next) => {
 exports.get_nosotros = (request, response, next) => {
     response.render('platillos/nosotros.ejs',{
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     });
 };
 
@@ -20,12 +22,14 @@ exports.get_nosotros = (request, response, next) => {
 exports.get_ordenar = (request, response, next) => {
     response.render('platillos/ordenar.ejs',{
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     });
 };
 
 exports.get_add = (request, response, next) => {
     response.render('platillos/add.ejs', {
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     });
 };
 
@@ -52,6 +56,7 @@ exports.post_add = (request, response, next) => {
 exports.get_opinion = (request, response, next) => {
     response.render('platillos/opinion.ejs',{
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     });
 };
 
@@ -88,6 +93,7 @@ exports.get_list = (request, response, next) => {
                 platillos: rows,
                 tiempo_transcurrido: tiempo_transcurrido,
                 username: request.session.username || '',
+                isLoggedIn: request.session.isLoggedIn || false,
             });
             
         }).catch((error) => {

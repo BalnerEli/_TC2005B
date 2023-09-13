@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+
     <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar is-light" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="https://bulma.io">
-                    <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+                    <img src="https://i.pinimg.com/236x/39/65/7b/39657b18e1c85375a438b4cb77baa7af.jpg" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" height="100">
                 </a>
+                
+                <% if (isLoggedIn == true)  { %>
 
                 <span class="navbar-item">
                     <%= username %>
@@ -23,9 +26,6 @@
                 <a class="navbar-item" href="/platillos/add">
                     Registrar
                 </a>
-                <a class="navbar-item" href="/platillos/about">
-                    Labs
-                </a>
                 <a class="navbar-item" href="/platillos/opinion">
                     Opiniones
                 </a>
@@ -35,6 +35,10 @@
                 <a class="navbar-item" href="/platillos/nosotros">
                     Nosotros
                 </a>
+                <a class="navbar-item" href="/platillos/about">
+                    Labs
+                </a>
+                <% } %>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
@@ -42,6 +46,26 @@
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true">Nombre</span>
                 </a>
+
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <% if (isLoggedIn == false)  { %>
+                        <a class="button is-primary" href="/users/add">
+                            <strong>Registrarse</strong>
+                        </a>
+                        <a class="button is-light" href="/users/login">
+                            Entrar
+                        </a>
+                        <% } else { %>
+                        <a class="button is-danger" href="/users/logout">
+                            Salir
+                        </a>
+                        <% } %>
+                    </div>
+                </div>
+                
             </div>
         </nav>
     </header>

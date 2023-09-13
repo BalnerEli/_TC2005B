@@ -11,9 +11,10 @@ module.exports = class Platillo {
 
     save() {
         return db.execute(
-            'INSERT INTO platillos(nombre, imagen, descripcion, opinion) VALUES (?, ?, ?)', 
+            'INSERT INTO platillos(nombre, imagen, descripcion, opinion) VALUES (?, ?, ?, ?)', 
             [this.nombre, this.imagen, this.descripcion, this.opinion]);
     }
+
     static fetchAll() {
         return db.execute('SELECT * FROM platillos')
     }
