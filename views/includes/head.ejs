@@ -14,24 +14,39 @@
                 <a class="navbar-item" href="https://bulma.io">
                     <img src="https://i.pinimg.com/236x/39/65/7b/39657b18e1c85375a438b4cb77baa7af.jpg" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" height="100">
                 </a>
-                
+
                 <% if (isLoggedIn == true)  { %>
 
-                <span class="navbar-item">
-                    <%= username %>
-                </span>
-                <a class="navbar-item" href="/platillos">
-                    Ver menú
-                </a>
-                <a class="navbar-item" href="/platillos/add">
-                    Registrar
-                </a>
-                <a class="navbar-item" href="/platillos/opinion">
-                    Opiniones
-                </a>
-                <a class="navbar-item" href="/platillos/ordenar">
-                    Ordenar
-                </a>
+                    <span class="navbar-item">
+                        <%= username %>
+                    </span>
+                    
+                    <% for(let permiso of privilegios) { %>
+                        <% if (permiso.nombre == 'platillos_ver') { %>
+                            <a class="navbar-item" href="/platillos">
+                                Ver menú
+                            </a>
+                        <% } %>
+
+                        <% if (permiso.nombre == 'platillos_agregar') { %>
+                            <a class="navbar-item" href="/platillos/add">
+                                Agregar platillos
+                            </a>
+                        <% } %>
+
+                        <% if (permiso.nombre == 'platillos_opinar') { %>
+                            <a class="navbar-item" href="/platillos/opinion">
+                                Opiniones
+                            </a>
+                        <% } %>
+
+                        <% if (permiso.nombre == 'platillos_ordenar') { %>
+                            <a class="navbar-item" href="/platillos/ordenar">
+                                Ordenar
+                            </a>
+                        <% } %>
+                    <% } %>
+                    
                 <a class="navbar-item" href="/platillos/nosotros">
                     Nosotros
                 </a>
@@ -39,15 +54,8 @@
                     Labs
                 </a>
                 <% } %>
-
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true">Nombre</span>
-                </a>
-
             </div>
+            
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">

@@ -18,20 +18,6 @@ el manejo de varios archivos.
 </div>
 
 <div class="box">
-LAB 17 <br>
-¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?<br>
-La ventaja principal se encuentra en la seguridad que le da a la aplicación, pues se 
-limita el acceso directo a las operaciones de base de datos desde otras capas. Esto también
-impide el ataque de SQL injection.<br>
-¿Qué es SQL injection y cómo se puede prevenir?<br>
-Es uno de los ataques más comunes, esto es al introducir código SQL, en su mayoría malicioso
-Esto, le permite a los atacantes obtener información de la base de datos de cierta aplicación <br>
-Para impedirlo, es necesario validar todas las entradas del usuario y de esta manera rechazar 
-todas aquellas que no cumplan con los parámetros establecidos.
-<br>
-</div>
-
-<div class="box">
     LAB 18 <br>
     ¿Qué otras formas de autentificación existen? <br>
     Otros tipos de autentificación son:
@@ -43,5 +29,27 @@ todas aquellas que no cumplan con los parámetros establecidos.
     <br>
     </div>
 
+    <div class="box">
+        LAB 19 <br>
+        ¿En qué consiste el control de acceso basado en roles?<br>
+        Es un modelo de gestión de acceso, este  se utiliza en sistemas de seguridad 
+        que permite controlar quién tiene acceso a ciertos recursos, funciones, apartados, etc.
+        de un sistema. Así pues, nos permite asignar permisos y privilegios a los 
+        usuarios dependiendo de sus roles <br>
+        Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. 
+        Realicen un análisis de las ventajas y desventajas de cada uno con respecto al
+        control de acceso. <br>
+        <br>
+        Sistema 1: Leasales con RBAC, cada uno de los usuarios tiene privilegios tales como
+        asignar rol, eliminar rol, ver gráficas, etc.<br>
+        ventajas: nos permite administrar mejor los permisos, seguridad granular <br>
+        desventajas: complejidad para implementar el sistema <br>
+        Sistema 2: Los usuarios de leadsales tiene acceso a todas las funciones <br>
+        Ventajas: no se requieren configuraciones adicionales <br>
+        Desventajas: Acceso a toda la información, desviación de información confidencial,
+        se puede elimiar  <br>
+
+        <br>
+        </div>
 
 <%- include('../includes/foot.ejs') %>

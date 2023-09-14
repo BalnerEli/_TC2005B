@@ -1,10 +1,10 @@
 <%- include('../includes/head.ejs') %>
-<h1 class="title">Registrate</h1>
+<h1 class="title">Regístrate</h1>
 
 <% if(error) { %>
     <article class="message is-warning">
         <div class="message-header">
-            <p>Falla en la matrix</p>
+            <p>Error</p>
             <button class="delete" aria-label="delete"></button>
         </div>
         <div class="message-body">
@@ -16,10 +16,10 @@
 <form action="/users/add" method="POST">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <label for="nombre">Nombre completo:</label>
-    <input id="nombre" name="nombre" class="input is-primary" type="text" placeholder="Eli_Balner">
+    <input id="nombre" name="nombre" class="input is-primary" type="text" placeholder="EliBalner">
     <br><br>
     <label for="username">Nombre de usuario:</label>
-    <input id="username" name="username" class="input is-primary" type="text" placeholder="Hola123$">
+    <input id="username" name="username" class="input is-primary" type="text" placeholder="Eli_balner$">
     <br><br>
     <label for="password">Password:</label>
     <input id="password" name="password" class="input is-primary" type="password" placeholder="Hola123$">

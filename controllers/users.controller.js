@@ -5,14 +5,13 @@ exports.get_login = (request, response, next) => {
     response.render('users/login.ejs', {
         username: '',
         isLoggedIn: request.session.isLoggedIn || false,
+        privilegios: request.session.privilegios || [],
     });
 };
 
 exports.post_login = (request, response, next) => {
     Usuario.fetchOne(request.body.username)
         .then(([users, fieldData]) => {
-            //Para obtener el primer elemento de la consulta 
-            //(la consulta sólo devuelve máximo 1 elemento)
             const user = users[0];
             if (users.length > 0) {
                 bcrypt.compare(request.body.password, user.password)
@@ -20,11 +19,18 @@ exports.post_login = (request, response, next) => {
                     if (doMatch) {
                         request.session.isLoggedIn = true;
                         request.session.user = user;
-                        return request.session.save(err => {
-                            response.redirect('/platillos');
-                        });
+                        Usuario.getPrivilegios(user.id)
+                            .then(([privilegios, fieldData]) => {
+                                console.log(privilegios);
+                                return request.session.save(err => {
+                                    request.session.privilegios = privilegios;
+                                    response.redirect('/platillos');
+                                });
+                            }).catch(error => {
+                                console.log(error);
+                                response.redirect('/users/login');
+                            });
                     }
-                    response.redirect('/users/login');
                 }).catch(error => {
                     console.log(error);
                     response.redirect('/users/login');
@@ -53,6 +59,7 @@ exports.get_add = (request, response, next) => {
         username: '',
         isLoggedIn: request.session.isLoggedIn || false,
         error: error,
+        privilegios: request.session.privilegios || [],
     });
 };
 exports.post_add = (request, response, next) => {
@@ -61,6 +68,7 @@ exports.post_add = (request, response, next) => {
         username: request.body.username,
         password: request.body.password,
     });
+
     usuario.save()
         .then(() => {
             return response.redirect('/users/login');
