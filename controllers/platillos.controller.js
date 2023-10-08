@@ -40,10 +40,12 @@ exports.get_add = (request, response, next) => {
 exports.post_add = (request, response, next) => {
 
     console.log(request.body);
+    console.log(request.file);
 
     const platillo = new Platillo({
         nombre: request.body.nombre,
-        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4DvQRndJwkYVEyZV5muqfh5RGWboDfsro7Q&usqp=CAU",
+        //https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4DvQRndJwkYVEyZV5muqfh5RGWboDfsro7Q&usqp=CAU
+        imagen: request.file.filename,
         descripcion: request.body.descripcion,
         opinion: request.body.opinion,
     });
@@ -53,7 +55,7 @@ exports.post_add = (request, response, next) => {
             return response.redirect('/platillos');
         }).catch((error) => {
             console.log(error);
-            response.redirect('/platilos/add');
+            response.redirect('/users/login');
         });
 }
 
